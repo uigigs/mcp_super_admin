@@ -335,7 +335,7 @@
                                     <a href="#"><i class="icon-users4"></i> <span>Client</span></a>
                                     <ul>
 
-                                        <li class="active"><a href="maxadminstore/clients"><i
+                                        <li><a href="maxadminstore/clients"><i
                                                     class="fa fa-search"></i><span>View/Search Clients</span></a></li>
 
 
@@ -567,7 +567,7 @@
                                         <!--<li><a href="#"><i class="icon-file-pdf"></i> <span>Batch Invoice PDF Export</span></a></li>-->
                                     </ul>
                                 </li>
-                                <li>
+                                <li class="">
                                     <a href="#"><i class="icon-hammer-wrench"></i> <span>Utilities</span></a>
                                     <ul>
                                         <li class=""><a href="maxadminstore/blogs"><i class="icon-blog"></i>
@@ -593,11 +593,15 @@
                                         <li>
                                             <a href="#"><i class="icon-earth"></i> <span>DC Management</span></a>
                                             <ul>
-                                                <li><a href="#"><i class="icon-menu6"></i> <span>Rack
-                                                            Management</span></a></li>
-                                                <li class=""><a href="maxadminstore/ip_management_listing"><i
-                                                            class="icon-list-numbered"></i> <span>IP
-                                                            Management</span></a></li>
+                                                <li><a href="#"><i class="icon-menu6"></i> <span>Rack Management</span></a></li>
+                                                <li class="">
+                                                    <a href="maxadminstore/ip_management_listing"><i class="icon-list-numbered"></i> <span>IP Management</span></a>
+                                                    <ul>
+                                                        <li><a href="#"><i class="icon-menu6"></i> <span>IP Manager</span></a></li>
+                                                        <li><a href="./ip-subnet-settings.html"><i class="icon-server"></i> <span>IP Subnet Settings</span></a></li>
+                                                        <li class="active"><a href="./ip-address-settings.html"><i class="icon-keyboard"></i> <span>IP Address Settings</span></a></li>
+                                                    </ul>   
+                                                </li>
 
                                                 <li><a href="javascript:;"><i class="icon-server"></i> <span>Server
                                                             Management</span></a></li>
@@ -1168,7 +1172,7 @@
 
                                         <div class="setting-dropdown-content">
                                             <label for="">DNS1</label>
-                                            <button class="add-btn">+ Add New</button>
+                                            <button class="add-btn" data-toggle="modal" data-target="#addNewModal">+ Add New</button>
                                             <div class="setting-dropdown">
                                                 <div class="dropdown-value">1.1.1.1</div>
                                                 <img src="./assets/admin/images/icons/dropdown-arrow.svg" alt="icon"
@@ -1185,7 +1189,7 @@
 
                                         <div class="setting-dropdown-content">
                                             <label for="">DNS2</label>
-                                            <button class="add-btn">+ Add New</button>
+                                            <button class="add-btn" data-toggle="modal" data-target="#addNewModal">+ Add New</button>
                                             <div class="setting-dropdown">
                                                 <div class="dropdown-value">2.2.2.2</div>
                                                 <img src="./assets/admin/images/icons/dropdown-arrow.svg" alt="icon"
@@ -1202,7 +1206,7 @@
 
                                         <div class="setting-dropdown-content">
                                             <label for="">DNS3</label>
-                                            <button class="add-btn">+ Add New</button>
+                                            <button class="add-btn" data-toggle="modal" data-target="#addNewModal">+ Add New</button>
                                             <div class="setting-dropdown">
                                                 <div class="dropdown-value">Default</div>
                                                 <img src="./assets/admin/images/icons/dropdown-arrow.svg" alt="icon"
@@ -1219,7 +1223,7 @@
 
                                         <div class="setting-dropdown-content">
                                             <label for="">DNS4</label>
-                                            <button class="add-btn">+ Add New</button>
+                                            <button class="add-btn" data-toggle="modal" data-target="#addNewModal">+ Add New</button>
                                             <div class="setting-dropdown">
                                                 <div class="dropdown-value">Default</div>
                                                 <img src="./assets/admin/images/icons/dropdown-arrow.svg" alt="icon"
@@ -1260,6 +1264,33 @@
 
                                         <button class="save-btn">Save Changes</button>
                                     </form>
+
+                                    <div class="add-new-popup">
+                                        <div class="modal fade" id="addNewModal" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-body p-0">
+                                                    <div class="modal-content">
+                                                      <h3>Add DNS</h3>
+  
+                                                      <div class="setting-dropdown">
+                                                          <div class="dropdown-value">2.2.2.2</div>
+                                                          <img src="./assets/admin/images/icons/dropdown-arrow.svg" alt="icon"
+                                                              class="drop-icon">
+                                                          <div class="dropdown-item">
+                                                              <ul>
+                                                                  <li>4.4.4.1</li>
+                                                                  <li>4.4.4.2</li>
+                                                                  <li>4.4.4.4</li>
+                                                              </ul>
+                                                          </div>
+                                                      </div>
+  
+                                                      <button>Submit</button>
+                                                    </div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

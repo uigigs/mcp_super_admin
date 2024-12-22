@@ -78,7 +78,7 @@
 }
 .feature-request-card-top .filter-dropdown {
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   position: relative;
   height: 40px;
   max-width: 170px;
@@ -89,7 +89,7 @@
 }
 .feature-request-card-top form {
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   height: 40px;
   display: flex;
   align-items: center;
@@ -198,7 +198,7 @@
   display: flex;
 }
 .feature-table .table-parent-row {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 .feature-table .table-parent-row ul {
   display: flex;
@@ -220,7 +220,7 @@
 }
 .feature-table .table-parent-row ul li .ip-address {
   border-radius: 6px;
-  border: 1px solid rgba(51, 51, 51, 0.1);
+  border: 1px solid rgba(51, 51, 51, 0.12);
   background: rgba(51, 51, 51, 0.02);
   padding: 1px 8px;
   color: #333;
@@ -242,7 +242,7 @@
 .feature-table .table-parent-row .table-collapse-btn {
   margin-right: 4px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #FFF;
   height: 21px;
   width: 21px;
@@ -274,7 +274,7 @@
   content: "";
   height: 100%;
   width: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.15);
   left: 40px;
   top: -25px;
   position: absolute;
@@ -283,7 +283,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 .feature-table .table-chilld-rows ul li {
   padding: 20px 0px;
@@ -296,7 +296,7 @@
   content: "";
   height: 1px;
   width: 20px;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.15);
   left: -24px;
   top: 49%;
   position: absolute;
@@ -386,7 +386,7 @@
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   background: #F6F6F6;
-  padding: 40px;
+  padding: 30px;
 }
 .ip-info-card ul {
   list-style: none;
@@ -401,7 +401,7 @@
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  line-height: 240%;
+  line-height: 300%;
 }
 .ip-info-card ul li strong {
   color: #111;
@@ -418,7 +418,7 @@
 }
 .setting-input input {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #FFF;
   height: 50px;
   width: 100%;
@@ -436,6 +436,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 200%;
+  margin: 0;
 }
 .settings-content .save-btn {
   margin-top: 10px;
@@ -469,7 +470,7 @@
 
 .customer-dropdown {
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #FFF;
   color: #444;
   font-size: 15px;
@@ -508,7 +509,7 @@
 }
 .customer-dropdown .search-bar {
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   height: 45px;
   display: flex;
   align-items: center;
@@ -623,7 +624,7 @@
   position: relative;
   cursor: pointer;
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   background: #FFF;
   height: 50px;
 }
@@ -683,6 +684,7 @@
 }
 
 .setting-checkbox {
+  max-width: 70px;
   /* Hide the browser's default checkbox */
   /* Create a custom checkbox */
   /* On mouse-over, add a grey background color */
@@ -724,7 +726,7 @@
   width: 20px;
   border-radius: 5px;
   border-radius: 5px;
-  border: 2px solid rgba(0, 0, 0, 0.12);
+  border: 2px solid rgba(0, 0, 0, 0.15);
   background: #FFF;
 }
 .setting-checkbox .checkbox-container:hover input ~ .checkmark {
@@ -750,6 +752,57 @@
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.add-new-popup .modal-dialog {
+  max-width: 430px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.add-new-popup .modal-body {
+  padding: 0;
+  background: transparent;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.add-new-popup .modal-body .modal-content {
+  padding: 40px;
+  border-radius: 20px;
+  background: #FFF;
+  overflow: hidden;
+  width: 100%;
+}
+.add-new-popup .modal-body .modal-content h3 {
+  color: #111;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 125%;
+  margin-bottom: 25px;
+}
+.add-new-popup .modal-body .modal-content button {
+  border-radius: 10px;
+  background: #35B7F3;
+  height: 50px;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  outline: none;
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 1300px) {
