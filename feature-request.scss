@@ -71,7 +71,7 @@
                         cursor: pointer;
 
                         &:hover {
-                            background: #ccc;
+                            background: rgba(0, 0, 0, 0.05);
                         }
                     }
                 }
@@ -221,7 +221,7 @@
                 padding: 3px 15px;
 
                 &:hover {
-                    background: #ccc;
+                    background: rgba(0, 0, 0, 0.05);
                 }
             }
         }
@@ -787,7 +787,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    background: #ccc;
+                    background: rgba(0, 0, 0, 0.05);
                 }
             }
         }
@@ -839,7 +839,7 @@
       
       /* On mouse-over, add a grey background color */
       .checkbox-container:hover input ~ .checkmark {
-        background-color: #ccc;
+        background-color: rgba(0, 0, 0, 0.05);
       }
       
       /* When the checkbox is checked, add a blue background */

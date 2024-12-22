@@ -67,7 +67,7 @@
   cursor: pointer;
 }
 .feature-request-card .filter-dropdown .dropdown-item ul li:hover {
-  background: #ccc;
+  background: rgba(0, 0, 0, 0.05);
 }
 .feature-request-card-top {
   padding: 30px;
@@ -192,7 +192,7 @@
   padding: 3px 15px;
 }
 .feature-table .table-row-menu .menu-list a:hover {
-  background: #ccc;
+  background: rgba(0, 0, 0, 0.05);
 }
 .feature-table .table-row-menu:hover .menu-list {
   display: flex;
@@ -679,7 +679,7 @@
   cursor: pointer;
 }
 .setting-dropdown .dropdown-item ul li:hover {
-  background: #ccc;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .setting-checkbox {
@@ -728,7 +728,7 @@
   background: #FFF;
 }
 .setting-checkbox .checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 .setting-checkbox .checkbox-container input:checked ~ .checkmark {
   background: #35B7F3;

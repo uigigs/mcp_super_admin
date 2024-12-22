@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile - Maxstore</title>
     <meta name="csrf-token" content="xHMJqwsAJlK0dGVTVtzyvCdfum16IPCVnZTESnqq">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+        type="text/css">
     <link media="all" type="text/css" rel="stylesheet" href="assets/admin/css/icons/icomoon/styles.css">
     <link media="all" type="text/css" rel="stylesheet" href="assets/admin/css/icons/fontawesome/styles.min.css">
     <link media="all" type="text/css" rel="stylesheet" href="assets/admin/css/bootstrap.css">
@@ -560,8 +561,8 @@
                                         <li class=""><a href="maxadminstore/reports/ticket-feedback-scores"><i
                                                     class="icon-medal-first"></i> <span>Ticket Feedback Scores</a></li>
 
-                                        <li class=""><a href="/client-product-group.html"><i
-                                                    class="icon-medal-first"></i> <span>Client Product Group</a></li>
+                                        <li class=""><a href="/client-product-group.html"><i class="fa fa-group"></i>
+                                                <span>Client Product Group</a></li>
 
                                         <!--<li><a href="#"><i class="icon-file-pdf"></i> <span>Batch Invoice PDF Export</span></a></li>-->
                                     </ul>
@@ -989,7 +990,7 @@
                 <div class="page-header page-header-default">
                     <div class="page-header-content maine-ph-inner">
                         <div class="page-title">
-                            <h4><i class="icon-package"></i><span class="text-semibold"> Feature Request </span>
+                            <h4><i class="fa fa-group"></i> <span class="text-semibold">Client Product Group</span>
                             </h4>
                         </div>
 
@@ -1061,9 +1062,8 @@
                     <div class="breadcrumb-line">
                         <ul class="breadcrumb">
                             <li><a href="maxadminstore/dashboard"><i class="icon-home2 position-left"></i> Home</a></li>
-                            <li><a href="maxadminstore/client/summary/1">Utilities</a></li>
-                            <li>IP Manager</li>
-                            <li class="active">Subnet</li>
+                            <li><a href="maxadminstore/reports">Reports</a></li>
+                            <li class="active">Client Product Group</li>
 
                         </ul>
                         <ul class="breadcrumb-elements">
@@ -1190,7 +1190,16 @@
     <script src="assets/admin/js/plugins/ui/nicescroll.min.js"></script>
     <script src="assets/admin/js/pages/layout_fixed_custom.js"></script>
 
-    <!-- nice country select js -->
+    <script src="assets/admin/js/jquery.counterup.min.js"></script>
+    <script src="assets/admin/js//waypoints.min.js"></script>
+    <script>
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    </script>
+
+    <!-- nice country select js
     <script src="assets/admin/js/niceCountryInput.js"></script>
     <script>
         /*---------------------------
@@ -1212,7 +1221,7 @@
             initialCountry: "il",
             separateDialCode: true,
         });
-    </script>
+    </script> -->
 
 
     <script type="text/javascript">
@@ -1274,57 +1283,208 @@
 
     </script>
 
-
+    <!-- pie chart -->
+    <script src="assets/admin/js/charts/chart.min.js"></script>
     <script>
+        var xValues = ["Hosting package (8)", "Active Domain (6)", "Landing Page (3)", "Newsletter (3)", "Email Campaign (1)"];
+        var yValues = [8, 6, 3, 3, 1];
+        var barColors = [
+            "#00C2FF",
+            "#00E0FF",
+            "#FFB800",
+            "#FF9600",
+            "#FF6400"
+        ];
+
+        new Chart("hostingChart", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        usePointStyle: true,
+                        fontSize: 15,
+                        fontColor: '#444444',
+                        padding: 15,
+                    },
+                }
+            }
+        });
+    </script>
+    <script>
+        var xValues = ["Created (256)", "Published (120)", "Not published (36)"];
+        var yValues = [256, 120, 36];
+        var barColors = [
+            "#1EDF6B",
+            "#00C2FF",
+            "#FF9600",
+        ];
+
+        new Chart("landingChart", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'left',
+                    labels: {
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        usePointStyle: true,
+                        fontSize: 15,
+                        fontColor: '#444444',
+                        padding: 15,
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        var xValues = ["Active Plan", "Low Amount", "Empty Plan"];
+        var yValues = [45, 20, 15];
+        var barColors = [
+            "#00C2FF",
+            "#FFB800",
+            "#FF6400",
+        ];
+
+        new Chart("smsChart", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'left',
+                    labels: {
+                        boxWidth: 8,
+                        boxHeight: 8,
+                        usePointStyle: true,
+                        fontSize: 15,
+                        fontColor: '#444444',
+                        padding: 15,
+                    }
+                },
+            }
+        });
+    </script>
+
+
+<script>
     // add class active on table row
-        const collapseButtons = document.querySelectorAll('.table-collapse-btn');
+    const collapseButtons = document.querySelectorAll('.table-collapse-btn');
 
-        collapseButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Find the parent row
-                const parentRow = this.closest('.table-parent-row');
+    collapseButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Find the parent row
+            const parentRow = this.closest('.table-parent-row');
 
-                // Toggle the 'active' class
-                if (parentRow) {
-                    parentRow.classList.toggle('active');
+            // Toggle the 'active' class
+            if (parentRow) {
+                parentRow.classList.toggle('active');
+            }
+        });
+    });
+</script>
+
+<script>
+    //filter dropdown
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdowns = document.querySelectorAll('.setting-dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const valueElement = dropdown.querySelector('.dropdown-value');
+            const itemElement = dropdown.querySelector('.dropdown-item');
+            const items = itemElement.querySelectorAll('li');
+
+            // Toggle visibility on click
+            valueElement.addEventListener('click', () => {
+                itemElement.style.display = itemElement.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Update the value on item click
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    valueElement.textContent = item.textContent; // Set the clicked item's text
+                    itemElement.style.display = 'none'; // Hide the dropdown
+                });
+            });
+
+            // Close the dropdown if clicking outside
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target)) {
+                    itemElement.style.display = 'none';
                 }
             });
         });
-    </script>
+    });
+</script>
 
-    <script>
-        //filter dropdown
-        document.addEventListener('DOMContentLoaded', () => {
-            const dropdowns = document.querySelectorAll('.filter-dropdown');
+<script>
+    //customer dropdown js
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdown = document.querySelector('.customer-dropdown');
+        const dropdownValue = dropdown.querySelector('.dropdown-value');
+        const dropdownListCard = dropdown.querySelector('.dropdown-list-card');
+        const searchInput = dropdown.querySelector('.search-bar input');
+        const listItems = dropdown.querySelectorAll('.drop-list li');
 
-            dropdowns.forEach(dropdown => {
-                const valueElement = dropdown.querySelector('.dropdown-value');
-                const itemElement = dropdown.querySelector('.dropdown-item');
-                const items = itemElement.querySelectorAll('li');
+        // Toggle dropdown visibility
+        dropdownValue.addEventListener('click', () => {
+            dropdownListCard.style.display = dropdownListCard.style.display === 'block' ? 'none' : 'block';
+        });
 
-                // Toggle visibility on click
-                valueElement.addEventListener('click', () => {
-                    itemElement.style.display = itemElement.style.display === 'block' ? 'none' : 'block';
-                });
+        // Close dropdown if clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                dropdownListCard.style.display = 'none';
+            }
+        });
 
-                // Update the value on item click
-                items.forEach(item => {
-                    item.addEventListener('click', () => {
-                        valueElement.textContent = item.textContent; // Set the clicked item's text
-                        itemElement.style.display = 'none'; // Hide the dropdown
-                    });
-                });
-
-                // Close the dropdown if clicking outside
-                document.addEventListener('click', (event) => {
-                    if (!dropdown.contains(event.target)) {
-                        itemElement.style.display = 'none';
-                    }
-                });
+        // Set clicked .customer-name to .dropdown-value
+        listItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const customerName = item.querySelector('.customer-name').textContent;
+                dropdownValue.textContent = customerName; // Update dropdown value
+                dropdownListCard.style.display = 'none'; // Hide dropdown list
             });
         });
-    </script>
 
+        // Filter list items based on search input
+        searchInput.addEventListener('input', () => {
+            const filter = searchInput.value.toLowerCase();
+            listItems.forEach(item => {
+                const customerName = item.querySelector('.customer-name').textContent.toLowerCase();
+                if (customerName.includes(filter)) {
+                    item.style.display = 'flex'; // Show matching item
+                } else {
+                    item.style.display = 'none'; // Hide non-matching item
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 
